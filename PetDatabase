@@ -19,4 +19,23 @@ public class PetDatabase {
     this.pets = new ArrayList<>();
     this.size = 0;
   }
+   public void loadData() {
+    Scanner fileReader;
+
+    try {
+      fileReader = new Scanner(new File(fileName));
+      while (fileReader.hasNextLine()) {
+        String line = fileReader.nextLine().trim();
+        String[] data = line.split(",");
+
+        String name = data[0];
+        int age = Integer.parseInt(data[1]);
+        this.pets.add(new Pet(name, age));
+      }
+      fileReader.close();
+    } catch (FileNotFoundException fnfe) {
+      System.out.println("Error: Cannot find " + fileName + ".\n");
+      System.exit(1);
+    }
+  }
 
