@@ -7,3 +7,15 @@ Assignment 1
 public class Pet(
   private String name;
   private int age;
+
+    //creating a new pet in the system
+  public pet (String name, in age) 
+  {
+    super();
+    this.name = name;
+    this.age = age;
+  }
+  //set name
+  public void setName(String name)
+  {
+  this name = name;
