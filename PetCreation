@@ -31,3 +31,12 @@ public class Pet(
   {
     this.age = age;
   }
+  //how it will be formatted
+  @Override
+  public String toString()
+  {
+    String str = "";
+    str = String.format("%5s%10s%9s%5d%5s\n", "|", name, "|", age, "|");
+    return str;
+  )
+)
