@@ -1,1 +1,22 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PetDatabase {
+
+  private String fileName;
+  private ArrayList<Pet> pets;
+  private int size;
+
+  public PetDatabase() {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter the input/output file name for pet data: ");
+    this.fileName = sc.nextLine().trim();
+    this.pets = new ArrayList<>();
+    this.size = 0;
+  }
 
