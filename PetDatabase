@@ -4,6 +4,7 @@ CSC 422 - Software Engineering
 Assignment 1
 */
 
+import java.io.FileInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -22,7 +23,7 @@ public class PetDatabase {
 
   public PetDatabase() {
     Scanner sc = new Scanner(System.in);
-    System.out.print("Enter the input/output file name for pet data: ");
+    System.out.print("Enter file name for pet data: ");
     this.fileName = sc.nextLine().trim();
     this.pets = new ArrayList<>();
     this.size = 0;
@@ -46,7 +47,7 @@ public class PetDatabase {
       System.exit(1);
     }
   }
-
+  //setting parameters for viewing of pets
   public void viewAllPets() {
     if (this.pets.isEmpty()) System.out.println(
       "Error: Sorry, there are no pets to show!\n"
@@ -69,7 +70,7 @@ public class PetDatabase {
       );
     }
   }
-
+  //setting parameters for adding new pets
   public void addNewPets() {
     Scanner sc = new Scanner(System.in);
     String line;
@@ -129,6 +130,7 @@ public class PetDatabase {
     System.out.println(size + " pets added.\n");
   }
 
+//setting parameters for removing a pet
   public void removeAPet() {
     viewAllPets();
 
