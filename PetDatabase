@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Properities;
 import java.util.Scanner;
 
+//creating class PetDatabase
 public class PetDatabase {
 
   private String fileName;
