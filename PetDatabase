@@ -120,7 +120,6 @@ public class PetDatabase {
       name = data[0];
       age = Integer.parseInt(data[1]);
 
-      // ALL OK
       this.pets.add(new Pet(name, age));
       size++;
     } while (!line.equalsIgnoreCase("done"));
