@@ -26,7 +26,7 @@ public class PetDatabaseRun {
       choice = sc.nextInt();
       sc.nextLine();
 
-      (choice) {
+      switch(choice) {
         case 1 -> displayAllPets();
         case 2 -> addPets(pets, sc);
         case 3 -> searchName(sc);
@@ -40,6 +40,20 @@ public class PetDatabaseRun {
 
     sc.close();
   }
+
+  private static void displayAllPets() {
+    //header
+    System.out.println("+--------------------------------------+");
+    System.out.printf(
+      "|%5s%5s%9s%10s%5s%5s\n",
+      "ID",
+      "|",
+      "NAME",
+      "|",
+      "AGE",
+      "|"
+    );
+    System.out.println("+--------------------------------------+");
 
 //setting parameters for rows
     int i = 0;
