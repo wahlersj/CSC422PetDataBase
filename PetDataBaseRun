@@ -97,7 +97,10 @@ public class PetDatabaseRun {
             break;
           }
         }
-      
+      } catch (Exception e) {
+        System.out.println("Error: " + input + " is not valid");
+      }
+
       //pets.add(new Pet(data[0], age));
       count++;
     } while (!petStr.equalsIgnoreCase("done"));
@@ -214,6 +217,9 @@ public class PetDatabaseRun {
       7) Exit program"""
     );
   }
+
+  private static void petList(ArrayList<Pet> pets, String filename) {
+    Scanner file;
 
     try {
       file = new Scanner(new File(filename));
