@@ -40,3 +40,56 @@ public class PetDatabaseRun {
 
     sc.close();
   }
+
+//setting parameters for rows
+    int i = 0;
+    for (Pet pet : pets) {
+      System.out.printf("|%5d%5s", i, pet.toString());
+      i++;
+    }
+
+    //how the footer will display
+    System.out.println("+--------------------------------------+");
+    System.out.println((i) + " rows in set.");
+  }
+    private static void addPets(ArrayList<Pet> pets, Scanner sc) {
+    int count = 0;
+    String petStr = "";
+
+    do {
+      System.out.print(
+        "add pet (name, age) or type done to return to main menu: "
+      );
+      String input;
+      input = sc.nextLine();
+      String[] data = input.split("\\s+");
+      try {
+        if (petStr.equalsIgnoreCase("done")) {
+          break;
+        }
+
+        int age = Integer.parseInt(input.split("\\s+")[1]);
+        
+//test for age
+
+        if (age < 1 || age > 20) {
+          System.out.println("Error: age is not within valid range.");
+        } else {
+          Pet p = new Pet(data[0], age);
+          if (pets.size() < 5) {
+            pets.add(p);
+          } else {
+            System.out.println("Error: Database is full");
+            break;
+          }
+        }
+      
+      //pets.add(new Pet(data[0], age));
+      count++;
+    } while (!petStr.equalsIgnoreCase("done"));
+
+    System.out.println(count + " pets added.");
+  }
+    private static void searchName(Scanner sc) {
+    System.out.print("Enter name to search: ");
+    String name = sc.nextLine();
